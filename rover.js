@@ -8,7 +8,9 @@ class Rover {
   receiveMessage(message) {
     const results = [];
 
-    for (const command of message.commands) {
+    for (let i = 0; i < message.commands.length; i++)
+     { 
+      const command = message.commands[i]
       if (command.commandType === "STATUS_CHECK") {
         results.push({
           completed: true,
